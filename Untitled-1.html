@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Lady ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #ffd6e7;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            color: #8f2858;
+            overflow-x: hidden;
+        }
+
+        .page {
+            min-height: 100vh;
+            margin: 18px;
+            border: 12px solid #f06fa8;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                #fff0f6,
+                #ffe3ef
+            );
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px 60px;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ef6fa7;
+            font-size: 32px;
+            opacity: 0.7;
+            animation: float 4s ease-in-out infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) {
+            left: 5%;
+            top: 10%;
+        }
+
+        .heart:nth-child(2) {
+            right: 5%;
+            top: 15%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(3) {
+            left: 8%;
+            top: 50%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(4) {
+            right: 8%;
+            top: 55%;
+            animation-delay: 1.5s;
+        }
+
+        .heart:nth-child(5) {
+            left: 12%;
+            bottom: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .heart:nth-child(6) {
+            right: 15%;
+            bottom: 18%;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(5deg);
+            }
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 5px 0 10px;
+            color: #d83d78;
+        }
+
+        .top-text {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #a94b75;
+        }
+
+        .photo-container {
+            margin: 20px auto 35px;
+        }
+
+        .photo {
+            width: min(90vw, 600px);
+            max-height: 550px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 7px solid white;
+            box-shadow:
+                0 12px 35px rgba(180, 50, 110, 0.25);
+        }
+
+        .video-section {
+            margin: 15px auto 30px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: #b34b78;
+        }
+
+        .vine-video {
+            width: min(90vw, 480px);
+            max-height: 600px;
+            border-radius: 20px;
+            border: 6px solid white;
+            box-shadow:
+                0 10px 30px rgba(180, 50, 110, 0.25);
+            background: black;
+        }
+
+        .love-message {
+            margin: 30px auto;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            line-height: 1.5;
+            font-weight: bold;
+            color: #c52e6b;
+        }
+
+        .love-message span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .music-box {
+            width: min(90vw, 600px);
+            margin: 25px auto 40px;
+            padding: 18px 22px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            border: 3px solid #f28ab7;
+            box-shadow:
+                0 8px 25px rgba(180, 50, 110, 0.15);
+        }
+
+        .music-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #c52e6b;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .music-note {
+            font-size: 0.8rem;
+            margin-top: 8px;
+            color: #a76a86;
+        }
+
+        .question {
+            font-size: clamp(1.6rem, 5vw, 2.5rem);
+            font-weight: bold;
+            color: #d32e70;
+            margin: 25px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            min-height: 80px;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 14px 24px 18px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #yesButton {
+            background: #e84786;
+            color: white;
+            border: 3px solid #d52e70;
+            box-shadow:
+                0 7px 18px rgba(210, 45, 110, 0.25);
+        }
+
+        #yesButton:hover {
+            transform: scale(1.08);
+            background: #d92f72;
+        }
+
+        #noButton {
+            background: white;
+            color: #d52e70;
+            border: 3px solid #f28ab7;
+        }
+
+        #noButton:hover {
+            background: #e84786;
+            color: white;
+            border-color: #d52e70;
+        }
+
+        #success {
+            display: none;
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d52e70;
+            animation: pop 0.5s ease;
+        }
+
+        .button-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 14px;
+            border: 3px solid white;
+            box-shadow:
+                0 5px 14px rgba(180, 50, 110, 0.2);
+            object-fit: cover;
+        }
+
+        .button-text {
+            display: block;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .falling-heart {
+            position: fixed;
+            top: -50px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                margin: 8px;
+                border-width: 7px;
+                padding: 25px 12px 50px;
+            }
+
+            .photo {
+                max-height: 500px;
+            }
+
+            .buttons {
+                gap: 12px;
+            }
+
+            button {
+                padding: 13px 25px;
+                font-size: 1rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- Floating hearts -->
+
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+
+
+    <div class="content">
+
+
+        <!-- TITLE -->
+
+        <h1>
+            For My Lady ❤️
+        </h1>
+
+
+        <div class="top-text">
+            I have something very important to tell you...
+        </div>
+
+
+
+        <!-- YOUR PHOTO -->
+
+        <div class="photo-container">
+
+            <img
+                src="./me.jpeg"
+                alt="Me"
+                class="photo"
+            >
+
+        </div>
+
+
+
+        <!-- VINE VIDEO -->
+
+        <div class="video-section">
+
+            <div class="video-title">
+                Just in case you forgot:
+            </div>
+
+
+            <video
+                id="vineVideo"
+                class="vine-video"
+                autoplay
+                playsinline
+                controls
+            >
+
+                <source
+                    src="./i-love-you-bitch-vine-ytshorts.savetube.vip.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser doesn't support video.
+
+            </video>
+
+        </div>
+
+
+
+        <!-- LOVE MESSAGE -->
+
+        <div class="love-message">
+
+            Reminder that I love you.
+
+            <span>
+                You'll always be my lady. ❤️
+            </span>
+
+        </div>
+
+
+
+        <!-- LADY IN MY LIFE -->
+
+        <div class="music-box">
+
+            <div class="music-title">
+                🎵 The Lady In My Life
+            </div>
+
+
+            <audio
+                id="ladySong"
+                autoplay
+                controls
+                loop
+            >
+
+                <source
+                    src="./Mickael_Jackson_-_The_Lady_In_My_Life_(mp3.pm).mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser doesn't support audio.
+
+            </audio>
+
+
+            <div class="music-note">
+                ♡ This one's for you ♡
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION -->
+
+        <div class="question">
+
+            Will you be the lady in my life? ❤️
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <button
+                id="yesButton"
+                onclick="sayYes()"
+            >
+
+                <img
+                    src="./shreksmirk.jpg"
+                    alt="Shrek Smirk"
+                    class="button-image"
+                >
+
+                <span class="button-text">YES ❤️</span>
+
+            </button>
+
+            <button id="noButton">
+
+                <img
+                    src="./tantrum.gif"
+                    alt="Tantrum"
+                    class="button-image"
+                >
+
+                <span class="button-text">NO ❤️</span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SUCCESS -->
+
+        <div id="success">
+
+            I KNEW IT. ❤️😭
+
+
+            <br><br>
+
+            I love you, my lady. ❤️
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    const song =
+        document.getElementById("ladySong");
+
+    const vine =
+        document.getElementById("vineVideo");
+
+
+    /*
+       Play the vine video 3 times total,
+       then stop instead of looping forever.
+    */
+
+    let vinePlayCount = 0;
+    const vineMaxPlays = 2;
+
+    vine.addEventListener("ended", function() {
+
+        vinePlayCount++;
+
+
+        if (vinePlayCount < vineMaxPlays) {
+
+            vine.currentTime = 0;
+            vine.play().catch(function() {});
+
+        }
+
+    });
+
+
+    window.addEventListener("load", function() {
+
+        vine.play().catch(function(error) {
+            console.log("Vine autoplay blocked.");
+        });
+
+
+        song.play().catch(function(error) {
+            console.log("Song autoplay blocked.");
+        });
+
+    });
+
+
+    document.addEventListener(
+        "click",
+        function startMedia() {
+
+            vine.play().catch(function() {});
+
+            song.play().catch(function() {});
+
+        },
+        { once: true }
+    );
+
+
+
+    const noButton =
+        document.getElementById("noButton");
+
+
+    const hoverMessages = [
+
+        "YES ❤️",
+
+        "YES MY SWEATY ❤️",
+
+        "YES BUTTER BOY ❤️",
+
+        "SKOOOL BOOYYY ❤️",
+
+        "OFC FART ❤️",
+
+        "FART ❤️",
+
+        "SWEAT FART ❤️"
+
+    ];
+
+
+    let hoverIndex = 0;
+
+
+    const noButtonText =
+        document.querySelector(
+            "#noButton .button-text"
+        );
+
+
+    noButton.addEventListener(
+        "mouseenter",
+        function() {
+
+            noButtonText.innerText =
+                hoverMessages[hoverIndex];
+
+
+            hoverIndex++;
+
+
+            if (
+                hoverIndex >= hoverMessages.length
+            ) {
+
+                hoverIndex = 0;
+
+            }
+
+        }
+    );
+
+
+    noButton.addEventListener(
+        "mouseleave",
+        function() {
+
+            noButtonText.innerText =
+                "NO ❤️";
+
+        }
+    );
+
+
+
+    function sayYes() {
+
+
+        document.getElementById(
+            "success"
+        ).style.display = "block";
+
+
+        noButton.style.display =
+            "none";
+
+
+        const yesButtonText =
+            document.querySelector(
+                "#yesButton .button-text"
+            );
+
+
+        yesButtonText.innerText =
+            "MY LADY ❤️";
+
+
+        vine.play().catch(function() {});
+
+        song.play().catch(function() {});
+
+
+        createHearts(50);
+
+    }
+
+
+
+    function createHearts(number) {
+
+        for (
+            let i = 0;
+            i < number;
+            i++
+        ) {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.className =
+                "falling-heart";
+
+
+            heart.innerText =
+                "❤️";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (20 + Math.random() * 25) + "px";
+
+
+            const duration =
+                2.5 + Math.random() * 3;
+
+
+            heart.style.animationDuration =
+                duration + "s";
+
+
+            heart.style.animationDelay =
+                Math.random() * 2 + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function() {
+
+                    heart.remove();
+
+                },
+                (duration + 2) * 1000
+            );
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
